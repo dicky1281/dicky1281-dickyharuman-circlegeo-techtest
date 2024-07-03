@@ -60,14 +60,14 @@ onMounted(() => {
 .loading-progress {
   width: 0%;
   height: 100%;
-  background-color: #3498db; /* Progress bar color */
-  transition: width 0.5s ease; /* Smooth transition for width changes */
+  background-color: #3498db;
+  transition: width 0.5s ease;
 }
 .loading-progress-wrapper {
-  width: 300px; /* Adjust progress bar width */
-  height: 20px; /* Adjust progress bar height */
-  background-color: #ddd; /* Background color for progress bar wrapper */
-  border-radius: 10px; /* Border radius for progress bar wrapper */
-  overflow: hidden; /* Ensure the progress bar doesn't overflow */
+  width: 300px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
 }
 </style>
