@@ -37,7 +37,7 @@ const props = defineProps({
 const mapContainer = ref(null);
 const map = ref(null);
 const geojson = ref(null);
-const { tilesUrl } = useNuxtApp().$config;
+const config = useRuntimeConfig()
 const marker = ref({
   custom: null,
   default: null,
@@ -146,7 +146,7 @@ onMounted(async () => {
   map.value = new maplibregl.Map({
     container: mapContainer.value,
     style:
-      "https://api.maptiler.com/maps/streets/style.json?key=GG3RWkFa1Tzh2WWRMvJI",
+      `https://api.maptiler.com/maps/streets/style.json?key=${config.public.mapTilesKey}`,
     center: [120, -2.5], // I used Coordinate Indonesia
     zoom: 5,
   });
@@ -160,7 +160,7 @@ onMounted(async () => {
       source: {
         type: "raster",
         tiles: [
-          "https://rami.bmkg.go.id/api/windtemp_get/wafc/WT/snow/850/202405121800/202405131200/{z}/{x}/{y}.png",
+          config.public.vectorTiles,
         ],
         tileSize: 256,
       },
